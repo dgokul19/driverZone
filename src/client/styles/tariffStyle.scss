@@ -1,0 +1,224 @@
+.tariffContainer {
+    flex: 1;
+    padding: 5rem 0;
+    min-height: 200px;
+    background-color: var(--theme-white);
+
+    .tariffInner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            width: 60%;
+            line-height: 1.5rem;
+            text-align: center;
+            margin: 10px auto;
+        }
+
+        .toggleContainer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 0;
+            ;
+
+            ul {
+                list-style: none;
+                gap: 1rem;
+                display: inherit;
+
+                li {
+                    width: 290px;
+                    height: 120px;
+                    background-color: #f2f2f2;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+                    cursor: pointer;
+
+                    svg {
+                        font-size: 3rem;
+                        color: #555;
+                    }
+
+                    span {
+                        font-size: 1.5rem;
+                        color: var(--theme-secondary);
+                    }
+
+                    &:hover {
+                        transition: .1s ease-in all;
+                        background-color: rgba(57, 135, 111, 0.51);
+
+                        svg,
+                        span {
+                            color: var(--theme-white);
+                        }
+                    }
+
+                    &.active {
+                        transition: .3s ease-in all;
+                        background-color: var(--theme-primary);
+
+                        svg,
+                        span {
+                            color: var(--theme-white);
+                        }
+                    }
+                }
+            }
+
+            .tariffSection {
+                width: 100%;
+
+                .rowTariff {
+                    margin: 1rem auto;
+                    display: flex;
+                    gap: 1rem;
+                    background-color: #efefed;
+                    box-shadow: 0px 25px 50px 0px rgba(13, 29, 27, 0.1);
+                    &.single {
+                        width: 50%;
+                    }
+
+                    .tariffBox {
+                        flex: 1;
+                        padding: 1rem 3rem;
+                        display: flex;
+                        justify-content: space-between;
+
+                        ol {
+                            flex: 1;
+                            margin: 0;
+                            flex-direction: column;
+
+                            li {
+                                justify-content: space-between;
+                                padding: 2rem 3rem 1rem;
+                                display: flex;
+                                align-items: center;
+                                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                                position: relative;
+                                &:last-child{
+                                    border: none;
+                                }
+                                span {
+                                    position: absolute;
+                                    transform: translateY(-30px);
+                                    color: var(--theme-primary);
+                                    font-size: .9rem;
+                                }
+
+                                label {
+                                    font-size: 2rem;
+                                    color: var(--theme-primary);
+                                    justify-content: space-between;
+                                    display: flex;
+                                    align-items: center;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.active {
+                    transition: .3s ease-in all;
+                    opacity: 1;
+                    height: auto;
+                }
+
+                &.hide {
+                    transition: .1s ease-in all;
+                    opacity: 0;
+                    height: 0;
+                    overflow: hidden;
+                }
+            }
+        }
+
+
+        .dispositn {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h3{
+                color: var(--theme-primary);
+                font-family: var(--title-font);
+            }
+            p {
+                width: 55%;
+                text-align: center;
+                line-height: 1.6rem;
+            }
+
+            table {
+                margin-top: 2rem;
+                width: 50%;
+                border: 1px solid rgba(0, 0, 0, .2);
+
+                thead {
+                    background-color: var(--theme-primary);
+                    height: 50px;
+
+                    th {
+                        padding: 1rem;
+
+                        &:first-child {
+                            text-align: left;
+                        }
+
+                        color: var(--theme-white);
+
+                        &:nth-child(2),
+                        &:nth-child(3) {
+                            width: 250px;
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        height: 50px;
+
+                        &:first-child {
+                            td:first-child {
+                                background-color: rgb(205 220 57 / 46%);
+                                font-weight: bold;
+                                text-align: center;
+                            }
+                        }
+
+                        &:last-child {
+                            td {
+                                border-bottom: none
+                            }
+                        }
+
+                        td {
+                            padding: 1rem;
+                            text-align: center;
+                            border-bottom: 1px solid rgba(0, 0, 0, .2);
+                            font-weight: bold;
+
+                            &:first-child {
+                                text-align: left;
+                                font-weight: normal;
+                            }
+
+                            span {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
