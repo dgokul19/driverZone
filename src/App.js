@@ -18,7 +18,7 @@ function App() {
             <Routes>
                 <Route path="/faq" element={<FaqComponent/>} ></Route>
                 <Route path="/contact" element={<ContactComponent/>} ></Route>
-                <Route path="/" element={<HomeComponent/>} />
+                <Route path="/*" element={<HomeComponent/>} />
             </Routes>
         </Router>
     </div>
