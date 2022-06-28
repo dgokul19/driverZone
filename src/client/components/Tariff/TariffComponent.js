@@ -22,12 +22,12 @@ const TariffComponent = () => {
 
                     <div className='toggleContainer'>
                         <ul>
-                            <li className={(tariffSec === 'berline') && 'active'} onClick={() => changeTariffSection('berline')}>
+                            <li className={(tariffSec === 'berline') ? 'active' : ''} onClick={() => changeTariffSection('berline')}>
                                 <IoCarSportSharp />
                                 <span>Berline</span>
                             </li>
 
-                            <li className={(tariffSec === 'van') && 'active'} onClick={() => changeTariffSection('van')}>
+                            <li className={(tariffSec === 'van') ? 'active' : ''} onClick={() => changeTariffSection('van')}>
                                 <FaShuttleVan />
                                 <span>Van</span>
                             </li>
@@ -148,9 +148,12 @@ const TariffComponent = () => {
 
                         <table>
                             <thead>
-                                <th>Price</th>
-                                <th>Berline</th>
-                                <th>Van</th>
+                                <tr>
+                                    <th>Price</th>
+                                    <th>Berline</th>
+                                    <th>Van</th>
+                                </tr>
+
                             </thead>
                             <tbody>
                                 <tr>

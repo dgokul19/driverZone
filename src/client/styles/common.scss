@@ -45,7 +45,9 @@ h2.mainTitle {
     width: 100vw;
     height: 100vh;
 }
-
+.color-white{
+    color: var(--theme-white) !important;
+}
 // Banner 
 
 .BannerContainer {
@@ -122,10 +124,12 @@ h2.mainTitle {
     flex: 1;
     padding: 1em 2em;
 
+    &.subPages {
+        background-color: var(--theme-primary);
+    }
+
     .logo {
         width: 200px;
-        height: 60px;
-        margin: 10px 0;
     }
 
     .right_header {
@@ -145,13 +149,12 @@ h2.mainTitle {
             overflow: hidden;
 
             li {
+                width: 40px;
                 height: 100%;
-                width: 50%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 border-right: 1px solid var(--theme-white);
-                padding: 1rem;
 
                 &:last-child {
                     border-right: none;
@@ -260,6 +263,7 @@ h2.mainTitle {
             justify-content: center;
             align-items: center;
             position: relative;
+
             .overlay_bg {
                 width: 70%;
                 clip-path: polygon(0px 100%, 0px 0px, 32% 0px, 100% 231%);
@@ -276,37 +280,89 @@ h2.mainTitle {
                 z-index: 1;
             }
         }
-        .callUsContent{
+
+        .callUsContent {
             width: 50%;
             padding: 10rem 5rem;
             display: flex;
-            gap:2.5rem;
+            gap: 2.5rem;
             flex-direction: column;
             justify-content: center;
             color: var(--theme-white);
-            h2{
+
+            h2 {
                 font-size: 2rem;
                 font-family: var(--title-font);
-                margin-bottom: 1rem;;
+                margin-bottom: 1rem;
+                ;
             }
-            h1{
+
+            h1 {
                 color: var(--theme-primary);
                 font-size: 4rem;
                 font-weight: bold;
                 margin: 1rem 0;
             }
-            p{
+
+            p {
                 color: var(--theme-body-bg);
                 font-size: 1.2rem;
                 letter-spacing: 1px;
                 margin-bottom: 1rem;
             }
+
             button {
                 height: 50px;
                 border: none;
                 padding: 0 3rem;
                 background-color: var(--theme-primary);
                 text-transform: uppercase;
+                color: var(--theme-white);
+            }
+        }
+    }
+}
+
+// SubPageBanner
+
+.SubPageBanner {
+    width: 100%;
+    height: 40vh;
+    background: url('../assets/images/subPageBanner-min.jpeg') no-repeat;
+    background-size: cover;
+    background-position: 0% 20%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .8);
+        top: 0;
+        position: absolute;
+    }
+
+    .banner-content {
+        position: relative;
+        z-index: 1;
+        font-family: var(--title-font);
+
+        h1 {
+            color: var(--theme-white);
+            font-size: 3rem;
+            text-transform: uppercase;
+        }
+
+        p {
+            text-align: center;
+            color: var(--theme-white);
+            font-size: 1.2rem;
+            a{
+                text-decoration: none;
+                color: var(--theme-primary);
             }
         }
     }

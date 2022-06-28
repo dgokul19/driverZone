@@ -1,17 +1,39 @@
-import { Fragment } from "react";
+import { Fragment, useState, useRef } from "react";
 import { FaUserTie } from 'react-icons/fa';
 import { GiRotaryPhone } from 'react-icons/gi';
 import { TiLocation } from 'react-icons/ti';
 import { BsCalendarDateFill } from 'react-icons/bs';
 import { IoIosTime } from 'react-icons/io';
 
+import AutoComplete from './AutoComplete/AutoComplete';
 
+import { DEFAULT_VALUE } from '../util/constants';
 
 import '../styles/bookingForm.scss';
 
 import LeftImage from '../assets/images/tesla_form.png';
 
 const BookYourJourneyForm = () => {
+    const { BOOKING_DETAILS } = DEFAULT_VALUE;
+    const inputCalendar = useRef(null);
+    const inputTime = useRef(null);
+
+    const [ bookingFrom, setBookingForm ] = useState({...BOOKING_DETAILS}); 
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setBookingForm({
+            ...bookingFrom,
+            [name] : value
+        });
+    };
+   
+    const handleLocation = (e) => {
+
+    };
+
+    console.log(bookingFrom);
+
     return (
         <Fragment>
             <div className="bookingContainer">
@@ -30,12 +52,12 @@ const BookYourJourneyForm = () => {
                             <div className="rowForm">
                                 <div className="formBox">
                                     <FaUserTie/>
-                                    <input name={`username`} placeholder={`Enter your name...`} />
+                                    <input name={`username`} placeholder={`Enter your name...`} value={bookingFrom.username} onChange={handleChange}/>
                                 </div>
 
                                 <div className="formBox">
                                     <GiRotaryPhone/>
-                                    <input name={`Phone`} placeholder={`Enter your phone...`} />
+                                    <input name={`phone`} placeholder={`Enter your phone...`} value={bookingFrom.phone} onChange={handleChange}/>
                                 </div>
                             </div>
 
@@ -43,24 +65,25 @@ const BookYourJourneyForm = () => {
                             <div className="rowForm">
                                 <div className="formBox">
                                     <TiLocation/>
-                                    <input name={`fromLocation`} placeholder={`Starting location...`} />
+                                    {/* <AutoComplete /> */}
+                                    <input name={`fromLocation`} placeholder={`Starting location...`} value={bookingFrom.fromLocation} onChange={handleLocation}/>
                                 </div>
 
                                 <div className="formBox">
                                     <TiLocation/>
-                                    <input name={`toLocation`} placeholder={`Destinaton location...`} />
+                                    <input name={`toLocation`} placeholder={`Destinaton location...`} value={bookingFrom.toLocation} onChange={handleLocation} />
                                 </div>
                             </div>
 
                             <div className="rowForm">
                                 <div className="formBox">
                                     <BsCalendarDateFill/>
-                                    <input name={`date`} type="date" placeholder={`Date`} />
+                                    <input ref={inputCalendar} name={`pickUpDate`} type="date" value={bookingFrom.pickUpDate} onChange={handleChange}/>
                                 </div>
 
                                 <div className="formBox">
                                     <IoIosTime/>
-                                    <input name={`time`} type="time" value={`00:00`} placeholder={`Time`} />
+                                    <input ref={inputTime} name={`pickUpTime`} type="time" value={bookingFrom.pickUpTime} onChange={handleChange}/>
                                 </div>
                             </div>
 

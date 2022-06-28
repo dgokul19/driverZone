@@ -1,23 +1,25 @@
 import { Fragment, useState } from "react";
+import { Link } from 'react-router-dom';
+
 import { ImHome } from 'react-icons/im';
 import { FaQq } from 'react-icons/fa';
-import { ImProfile } from 'react-icons/im';
+import { RiContactsFill } from 'react-icons/ri';
 
 import { HOMEPAGE } from '../util/constants';
 
 
 import Logo from '../assets/images/driverzone_logo.png';
 
-const Header = () => {
+const Header = ({landingPage}) => {
     const [language, setLanguage] = useState('En');
     const handleLanguage = () => {
 
     };
     return (
         <Fragment>
-            <div className="headerContainer">
+            <div className={`headerContainer ${!landingPage ? 'subPages' : ''}`}>
                 <div className="logo">
-                    <img src={Logo} alt={`Logo DriverZone`} />
+                    <Link to="/"><img src={Logo} alt={`Logo DriverZone`} /></Link>
                 </div>
                 <div className="right_header">
                     <div className="language_selectn">
@@ -26,9 +28,9 @@ const Header = () => {
                         </select>
                     </div>
                     <ul>
-                        <li className="active"><a href=""><ImHome /></a></li>
-                        {/* <li><a href=""><ImProfile /></a></li> */}
-                        <li><a href=""><FaQq /></a></li>
+                        <li className="active"><Link to="/"><ImHome /></Link></li>
+                        <li><Link to="/faq"><FaQq /></Link></li>
+                        <li><Link to="/contact"><RiContactsFill /></Link></li>
                     </ul>
                 </div>
             </div>
