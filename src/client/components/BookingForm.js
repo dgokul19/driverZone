@@ -1,11 +1,11 @@
-import { Fragment, useState, useRef } from "react";
+import { Fragment, useState } from "react";
 import { FaUserTie } from 'react-icons/fa';
 import { GiRotaryPhone } from 'react-icons/gi';
 import { TiLocation } from 'react-icons/ti';
 import { BsCalendarDateFill } from 'react-icons/bs';
 import { IoIosTime } from 'react-icons/io';
 
-import AutoComplete from './AutoComplete/AutoComplete';
+import BookingMap from './Map/BookingMap';
 
 import { DEFAULT_VALUE } from '../util/constants';
 
@@ -15,9 +15,8 @@ import LeftImage from '../assets/images/tesla_form.png';
 
 const BookYourJourneyForm = () => {
     const { BOOKING_DETAILS } = DEFAULT_VALUE;
-    const inputCalendar = useRef(null);
-    const inputTime = useRef(null);
 
+    const [ modal, setModal ] = useState(false); 
     const [ bookingFrom, setBookingForm ] = useState({...BOOKING_DETAILS}); 
 
     const handleChange = (e) => {
@@ -28,11 +27,14 @@ const BookYourJourneyForm = () => {
         });
     };
    
-    const handleLocation = (e) => {
-
+    const handleBooking = (e) => {
+        setModal(true);
     };
 
-    console.log(bookingFrom);
+    const handleLocation = (e) => {
+    };
+
+    console.log({modal});
 
     return (
         <Fragment>
@@ -65,7 +67,6 @@ const BookYourJourneyForm = () => {
                             <div className="rowForm">
                                 <div className="formBox">
                                     <TiLocation/>
-                                    {/* <AutoComplete /> */}
                                     <input name={`fromLocation`} placeholder={`Starting location...`} value={bookingFrom.fromLocation} onChange={handleLocation}/>
                                 </div>
 
@@ -78,22 +79,23 @@ const BookYourJourneyForm = () => {
                             <div className="rowForm">
                                 <div className="formBox">
                                     <BsCalendarDateFill/>
-                                    <input ref={inputCalendar} name={`pickUpDate`} type="date" value={bookingFrom.pickUpDate} onChange={handleChange}/>
+                                    <input name={`pickUpDate`} type="date" value={bookingFrom.pickUpDate} onChange={handleChange}/>
                                 </div>
 
                                 <div className="formBox">
                                     <IoIosTime/>
-                                    <input ref={inputTime} name={`pickUpTime`} type="time" value={bookingFrom.pickUpTime} onChange={handleChange}/>
+                                    <input name={`pickUpTime`} type="time" value={bookingFrom.pickUpTime} onChange={handleChange}/>
                                 </div>
                             </div>
 
                             <span>
-                                <button>Book Now</button>
+                                <button onClick={() => handleBooking()}>Book Now</button>
                             </span>
                         </div>
                     </div>
                 </div>
             </div> 
+            {<BookingMap open={modal} closeModal={() => setModal(false)}/>}
         </Fragment>
     )
 };

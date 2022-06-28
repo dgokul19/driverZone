@@ -1,0 +1,35 @@
+.mapLayerModal{
+    width: 90vw;
+    height: 90vh;
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    display: none;
+    &.open{
+        display: block;
+    }
+    .mapTransitionLayer{
+        width: 0;
+        height: 0;
+        flex: 1;
+        background-color: var(--theme-white);
+        box-shadow: var(--shadow-one);
+        opacity: 0;
+        transform: scale(.8);
+        transition: .4s width, .4s height, 1s opacity 1s transform;
+        position: relative;
+        .closeIcon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            color: var(--theme-primary);
+        }
+        &.active {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
