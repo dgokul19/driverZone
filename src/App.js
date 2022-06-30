@@ -10,7 +10,6 @@ import ContactComponent from './client/components/Contact';
 
 import './client/styles/common.scss';
 
-
 function App() {
   return (
     <div className="wrapperContainer">
