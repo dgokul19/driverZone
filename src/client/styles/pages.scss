@@ -1,0 +1,177 @@
+.faqMainContainer {
+    flex: 1;
+    padding: 5rem;
+
+    .faqWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .faqElement {
+            width: 70%;
+            box-shadow: var(--shadow-two);
+            margin: 0 auto;
+            border-radius: 10px;
+            background-color: var(--theme-body-bg);
+            padding: 2rem;
+
+            &.openMode {
+                background-color: var(--theme-primary);
+                color: var(--theme-white);
+            }
+
+            .faqHead {
+                position: relative;
+                cursor: pointer;
+
+                h3 {
+                    color: var(--theme-gray-555);
+                }
+
+                .handlerIcon {
+                    position: absolute;
+                    right: 0;
+                    top: 5px;
+                    font-size: 1.3rem;
+                }
+            }
+
+            .faqBody {
+                height: 0;
+                overflow: hidden;
+                transition: 0.3s linear all;
+
+                &.active {
+                    padding: 1rem 1rem 0 0;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+// Contact Page
+
+.contactPageWrapper {
+    flex: 1;
+    padding: 5rem 0;
+    background-color: var(--theme-grey-ccc);
+
+    .contactContainer {
+        display: flex;
+
+        .innerBox {
+            flex: 1;
+            position: relative;
+
+            &.gMapContainer {
+                iframe {
+                    border: none;
+                    width: 100%;
+                    min-height: 650px;
+                }
+            }
+
+            .locationContent {
+                position: absolute;
+                width: 60%;
+                height: 50%;
+                background-color: rgba(0, 0, 0, 0.7);
+                z-index: 1;
+                top: 25%;
+                right: 10%;
+                padding: 1rem;
+                color: var(--theme-white);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                h3 {
+                    font-family: var(--title-font);
+                    letter-spacing: 1px;
+                }
+
+                ul {
+                    list-style: none;
+                    width: 80%;
+                    margin: 2rem auto;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+
+                    li {
+                        display: flex;
+                        gap: 1rem;
+                        padding: 1.5rem 1rem;
+                        font-size: 1.2rem;
+
+                        svg {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+
+            &.formContainer {
+                display: flex;
+                flex-direction: column;
+                padding: 2rem;
+
+                .formBox {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    p {
+                        width: 80%;
+                        margin: 0 auto;
+                        font-family: var(--title-font);
+                        font-size: 1.2rem;
+                    }
+
+                    .formElement {
+                        width: 80%;
+                        margin: 0 auto;
+                        display: flex;
+                        flex-direction: inherit;
+                        gap: 1rem;
+
+                        label {
+                            font-size: 1rem;
+                            color: var(--theme-gray-555);
+                        }
+
+                        input,
+                        textarea {
+                            border: 1px solid rgba(0, 0, 0, 0.2);
+                            height: 50px;
+                            text-indent: 1rem;
+                            font-size: 1rem;
+                        }
+
+                        textarea {
+                            height: 100px;
+                        }
+                    }
+
+                    span {
+                        width: 80%;
+                        margin: 0 auto;
+                        
+                        button {
+                            width: 200px;
+                            border:none;
+                            display: flex;
+                            gap: .5rem;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: var(--theme-primary);
+                            height: 50px;
+                            font-size: 1rem;
+                            color: var(--theme-white);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
