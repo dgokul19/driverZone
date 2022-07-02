@@ -18,6 +18,12 @@
             &.openMode {
                 background-color: var(--theme-primary);
                 color: var(--theme-white);
+
+                .faqHead {
+                    h3 {
+                        color: var(--theme-white);
+                    }
+                }
             }
 
             .faqHead {
@@ -156,10 +162,10 @@
                     span {
                         width: 80%;
                         margin: 0 auto;
-                        
+
                         button {
                             width: 200px;
-                            border:none;
+                            border: none;
                             display: flex;
                             gap: .5rem;
                             justify-content: center;

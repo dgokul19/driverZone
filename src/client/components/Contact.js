@@ -23,7 +23,7 @@ const ContactComponent = () => {
             <div className="contactPageWrapper">
                 <div className="contactContainer">
                     <div className="innerBox gMapContainer">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31359.961970782508!2d79.10085565!3d10.734849299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1656769370480!5m2!1sen!2sin" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10515.399070641783!2d2.3946620499999995!3d48.7847583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sfr!4v1656777968197!5m2!1sen!2sfr" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
 
                         <div className="locationContent">
                             <h3>Contact Information</h3>
