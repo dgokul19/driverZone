@@ -6,7 +6,7 @@ const SubBanner = ({ title, path }) => {
             <div className='SubPageBanner'>
                 <div className="banner-content">
                     <h1>{title}</h1>
-                    <p><Link className={`color-white`} to='/'>Home</Link> | <Link to={path}>{title}</Link></p>
+                    <p><Link to='/'>Home</Link> | {title}</p>
                 </div>
             </div>
         </Fragment>
