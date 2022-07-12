@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PlacesAutocomplete, {
     geocodeByAddress,
     getLatLng,
@@ -7,21 +7,34 @@ import PlacesAutocomplete, {
 class AutoComplete extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { address: '' };
+        this.state = { 
+            address: '',
+            hideInput : true
+        };
     }
 
     handleChange = address => {
-        this.setState({ address });
+        this.setState({ address, hideInput : false });
     };
 
     handleSelect = address => {
         geocodeByAddress(address)
             .then(results => getLatLng(results[0]))
-            .then(latLng => console.log('Success', latLng))
+            .then(latLng => {
+                const { name, updateLocation } = this.props;
+                this.setState({ address, hideInput : true });
+                updateLocation(prevState => {
+                    prevState[name] = address;
+                    return { ...prevState };
+                })
+
+            })
             .catch(error => console.error('Error', error));
     };
 
+    
     render() {
+
         return (
             <PlacesAutocomplete
                 value={this.state.address}
@@ -29,36 +42,35 @@ class AutoComplete extends React.Component {
                 onSelect={this.handleSelect}
             >
                 {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-                    <div>
+                    <Fragment>
                         <input
                             {...getInputProps({
-                                placeholder: 'Search Places ...',
+                                placeholder: this.props.placeholder,
                                 className: 'location-search-input',
                             })}
                         />
-                        <div className="autocomplete-dropdown-container">
+                        {
+                            this.state.address && !this.state.hideInput && (
+                                <div className="autocomplete-dropdown-container">
                             {loading && <div>Loading...</div>}
                             {suggestions.map(suggestion => {
-                                const className = suggestion.active
-                                    ? 'suggestion-item--active'
-                                    : 'suggestion-item';
-                                // inline style for demonstration purpose
-                                const style = suggestion.active
-                                    ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-                                    : { backgroundColor: '#ffffff', cursor: 'pointer' };
+                                const className = 'suggestion-item';
                                 return (
                                     <div
                                         {...getSuggestionItemProps(suggestion, {
                                             className,
-                                            style,
                                         })}
+                                        key={suggestion.description}
                                     >
                                         <span>{suggestion.description}</span>
                                     </div>
                                 );
                             })}
                         </div>
-                    </div>
+                            )
+                        }
+                        
+                    </Fragment>
                 )}
             </PlacesAutocomplete>
         );

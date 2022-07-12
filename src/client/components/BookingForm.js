@@ -5,6 +5,7 @@ import { TiLocation } from 'react-icons/ti';
 import { BsCalendarDateFill } from 'react-icons/bs';
 import { IoIosTime } from 'react-icons/io';
 
+import AutoComplete from './AutoComplete/AutoComplete';
 import BookingMap from './Map/BookingMap';
 
 import { DEFAULT_VALUE } from '../util/constants';
@@ -34,7 +35,7 @@ const BookYourJourneyForm = () => {
     const handleLocation = (e) => {
     };
 
-    console.log({modal});
+    console.log({bookingFrom});
 
     return (
         <Fragment>
@@ -67,12 +68,13 @@ const BookYourJourneyForm = () => {
                             <div className="rowForm">
                                 <div className="formBox">
                                     <TiLocation/>
-                                    <input name={`fromLocation`} placeholder={`Starting location...`} value={bookingFrom.fromLocation} onChange={handleLocation}/>
+                                    <AutoComplete placeholder={'Starting location...'} name={`fromLocation`} updateLocation={setBookingForm}/>
                                 </div>
 
                                 <div className="formBox">
                                     <TiLocation/>
-                                    <input name={`toLocation`} placeholder={`Destinaton location...`} value={bookingFrom.toLocation} onChange={handleLocation} />
+                                    <AutoComplete placeholder={'Destinaton location...'} name={`toLocation`} updateLocation={setBookingForm}/>
+                                    {/* <input name={`toLocation`} placeholder={`Destinaton location...`} value={bookingFrom.toLocation} onChange={handleLocation} /> */}
                                 </div>
                             </div>
 

@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { ImHome } from 'react-icons/im';
 import { FaQq } from 'react-icons/fa';
@@ -11,6 +11,8 @@ import { HOMEPAGE } from '../util/constants';
 import Logo from '../assets/images/driverzone_logo.png';
 
 const Header = ({landingPage}) => {
+    const location = useLocation().pathname;
+    console.log(location);
     const [language, setLanguage] = useState('En');
     const handleLanguage = () => {
 
@@ -28,9 +30,9 @@ const Header = ({landingPage}) => {
                         </select>
                     </div>
                     <ul>
-                        <li className="active"><Link to="/"><ImHome /></Link></li>
-                        <li><Link to="/faq"><FaQq /></Link></li>
-                        <li><Link to="/contact"><RiContactsFill /></Link></li>
+                        <li className={(location.indexOf('faq') === -1 && location.indexOf('contact') ) === -1 ? `active` : ''}><Link to="/"><ImHome /></Link></li>
+                        <li className={location.indexOf('faq') > -1 ? 'active' : ''}><Link to="/faq"><FaQq /></Link></li>
+                        <li className={location.indexOf('contact') > -1 ? 'active' : ''}><Link to="/contact"><RiContactsFill /></Link></li>
                     </ul>
                 </div>
             </div>
