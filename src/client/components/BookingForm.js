@@ -9,6 +9,7 @@ import AutoComplete from './AutoComplete/AutoComplete';
 import BookingMap from './Map/BookingMap';
 
 import { DEFAULT_VALUE } from '../util/constants';
+import { validateDetails } from '../util/helper';
 
 import '../styles/bookingForm.scss';
 
@@ -17,7 +18,7 @@ import LeftImage from '../assets/images/tesla_form.png';
 const BookYourJourneyForm = () => {
     const { BOOKING_DETAILS } = DEFAULT_VALUE;
 
-    const [ modal, setModal ] = useState(false); 
+    const [ modal, setModal ] = useState(true); 
     const [ bookingFrom, setBookingForm ] = useState({...BOOKING_DETAILS}); 
 
     const handleChange = (e) => {
@@ -28,8 +29,14 @@ const BookYourJourneyForm = () => {
         });
     };
    
-    const handleBooking = (e) => {
-        setModal(true);
+    const handleBooking = () => {
+        const { status, msg } = validateDetails(bookingFrom);
+        if(!status) {
+            alert(`Error: ${msg}`);
+        } else {
+            setModal(true);
+
+        }
     };
 
     const handleLocation = (e) => {
