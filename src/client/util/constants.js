@@ -16,8 +16,19 @@ export const DEFAULT_VALUE = {
         contactEmail : '',
         contactNumber : '',
         contactMessage : '',
+    },
+    BOOKING_REDUCER : {
+        fromLocation : {},
+        toLocation : {}
     }
 };
+
+export const MAP_CONSTANT = {
+    defaultZoom : 8,
+    defaultLatitude : 48.8566,
+    defaultLongitude : 2.3522
+};
+
 
 export const FAQ_CONTENT = [
     {

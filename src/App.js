@@ -8,6 +8,8 @@ import HomeComponent from './client/components/Home';
 import FaqComponent from './client/components/FaqComponent';
 import ContactComponent from './client/components/Contact';
 
+import { BookingContextProvider } from './client/context/BookingContext';
+
 import './client/styles/common.scss';
 
 function App() {
@@ -17,7 +19,7 @@ function App() {
             <Routes>
                 <Route path="/faq" element={<FaqComponent/>} ></Route>
                 <Route path="/contact" element={<ContactComponent/>} ></Route>
-                <Route path="/*" element={<HomeComponent/>} />
+                <Route path="/*" element={<BookingContextProvider><HomeComponent/></BookingContextProvider>} />
             </Routes>
         </Router>
     </div>

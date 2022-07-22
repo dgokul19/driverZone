@@ -1,16 +1,18 @@
-.mapLayerModal{
+.mapLayerModal {
     width: 100vw;
     height: 100vh;
-    top:0;
+    top: 0;
     left: 0;
     position: fixed;
-    background-color: rgba(0,0,0,.8);
+    background-color: rgba(0, 0, 0, .8);
     display: none;
     z-index: 1;
-    &.open{
+
+    &.open {
         display: block;
     }
-    .mapTransitionLayer{
+
+    .mapTransitionLayer {
         width: 95vw;
         height: 90vh;
         margin: 5vh auto;
@@ -21,13 +23,16 @@
         transform: scale(.8);
         transition: .4s width, .4s height, 1s opacity 1s transform;
         position: relative;
+
         .closeIcon {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: -30px;
+            right: -30px;
             font-size: 2rem;
+            cursor: pointer;
             color: var(--theme-primary);
         }
+
         &.active {
             opacity: 1;
             transform: scale(1);

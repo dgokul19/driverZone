@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useContext } from "react";
 import { FaUserTie } from 'react-icons/fa';
 import { GiRotaryPhone } from 'react-icons/gi';
 import { TiLocation } from 'react-icons/ti';
@@ -7,6 +7,7 @@ import { IoIosTime } from 'react-icons/io';
 
 import AutoComplete from './AutoComplete/AutoComplete';
 import BookingMap from './Map/BookingMap';
+
 
 import { DEFAULT_VALUE } from '../util/constants';
 import { validateDetails } from '../util/helper';
@@ -18,7 +19,7 @@ import LeftImage from '../assets/images/tesla_form.png';
 const BookYourJourneyForm = () => {
     const { BOOKING_DETAILS } = DEFAULT_VALUE;
 
-    const [ modal, setModal ] = useState(true); 
+    const [ modal, setModal ] = useState(false); 
     const [ bookingFrom, setBookingForm ] = useState({...BOOKING_DETAILS}); 
 
     const handleChange = (e) => {
@@ -41,8 +42,6 @@ const BookYourJourneyForm = () => {
 
     const handleLocation = (e) => {
     };
-
-    console.log({bookingFrom});
 
     return (
         <Fragment>
@@ -104,7 +103,7 @@ const BookYourJourneyForm = () => {
                     </div>
                 </div>
             </div> 
-            {<BookingMap open={modal} closeModal={() => setModal(false)}/>}
+            {<BookingMap open={modal} details={bookingFrom} closeModal={() => setModal(false)}/>}
         </Fragment>
     )
 };
