@@ -174,11 +174,14 @@
 
         .bookUsContent {
             flex-direction: column;
+
             .leftSideImage {
                 width: 100%;
+
                 .actionImage {
                     width: 190px;
                 }
+
                 .overlay_bg {
                     width: 70%;
                     left: 20%;
@@ -187,21 +190,56 @@
 
                 }
             }
-            .callUsContent{
+
+            .callUsContent {
                 width: 100%;
-                padding: .5rem 2rem; 
+                padding: .5rem 2rem;
                 gap: .51rem;
-                h2{
+
+                h2 {
                     font-size: 1.4rem;
                 }
-                h1{
+
+                h1 {
                     font-size: 2rem;
                 }
-                p{
+
+                p {
                     font-size: 1rem;
                 }
             }
         }
 
     }
+
+    .faqMainContainer {
+        padding: 1rem;
+
+        .faqWrapper {
+            .faqElement {
+                width: 90%;
+
+                .faqBody {
+                    &.active {
+                        max-height: 150px;
+                        height: 65px;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .contactPageWrapper {
+        .contactContainer {
+            flex-direction: column;
+            .gMapContainer {
+                .locationContent {
+                    width: 80%;
+                    height: 60%;
+                }
+            }
+        }
+    }
+
 }
