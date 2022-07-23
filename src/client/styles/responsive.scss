@@ -1,0 +1,104 @@
+@media (max-width: 500px) {
+    .container {
+        width: 96vw;
+    }
+
+    .headerContainer {
+        padding: .5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .right_header {
+            width: 100%;
+            justify-content: space-evenly;
+
+            ul {
+                height: 50px;
+
+                li {
+                    width: 50px;
+                }
+            }
+        }
+    }
+
+    .BannerContainer {
+        .bannerContent {
+            gap: .5rem;
+            margin-top: 2rem;
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            p {
+                width: 90%;
+            }
+
+            button {
+                height: 40px;
+                font-size: .9rem;
+                margin-top: 2rem;
+            }
+        }
+    }
+
+    .bookingContainer {
+        .formOuterLayer {
+            width: 90vw;
+            flex-direction: column;
+            transform: translateY(-10%);
+            .imageSide {
+                width: 100%;
+                &::before{
+                    background-color: var(--theme-primary);
+                }
+            }
+            .formSide {
+                padding: 2rem 1rem;
+                ul {
+                    justify-content: center;
+                }
+                .formBoxContainer{
+                    .rowForm {
+                        flex-direction: column;
+                        .formBox{
+                            padding: 10px;
+                            border:1px solid rgba(0,0,0,.1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .mapLayerModal{
+        .mapTransitionLayer{
+            padding: 1rem;
+            .mapContainer{
+                height: 50%;
+            }
+            .closeIcon{
+                right: -5px;
+                top:-35px;
+            }
+            .detailsContainer{
+                position: relative;
+                top:unset;
+                width: 100%;
+                left: unset;
+            }
+        }
+    }
+
+    .servicesContainer{
+        .rowService{
+            flex-direction: column;
+            align-items: center;
+            .serviceBox{
+                width: 320px;
+            }
+        }
+    }
+}

@@ -11,6 +11,7 @@ import ContactComponent from './client/components/Contact';
 import { BookingContextProvider } from './client/context/BookingContext';
 
 import './client/styles/common.scss';
+import './client/styles/responsive.scss';
 
 function App() {
   return (

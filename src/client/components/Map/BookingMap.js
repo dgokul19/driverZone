@@ -34,7 +34,7 @@ const BookingMap = ({ open, closeModal, details = {} }) => {
                     {
                         (!_.isEmpty(bookingLocation.fromLocation) && !_.isEmpty(bookingLocation.toLocation)) && <GoogleMap
                             direction={bookingLocation}
-                            containerElement={<div style={{ height: `100%` }} />}
+                            containerElement={<div className='mapContainer' />}
                             mapElement={<div style={{ height: `100%` }} />}
                         />
                     }
