@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/driverZone/static/css/main.1b31f50a.css",
+    "main.css": "/driverZone/static/css/main.77ed04c1.css",
     "main.js": "/driverZone/static/js/main.2319721c.js",
     "static/media/service-video-bg.mp4": "/driverZone/static/media/service-video-bg.f05e88e45f9f479f185e.mp4",
     "static/media/service-video-bg.ogg": "/driverZone/static/media/service-video-bg.c43909dfd4f9d0ef2ce9.ogg",
@@ -12,7 +12,7 @@
     "index.html": "/driverZone/index.html"
   },
   "entrypoints": [
-    "static/css/main.1b31f50a.css",
+    "static/css/main.77ed04c1.css",
     "static/js/main.2319721c.js"
   ]
 }
