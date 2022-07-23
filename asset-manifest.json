@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/driverZone/static/css/main.510d56be.css",
-    "main.js": "/driverZone/static/js/main.33bdee81.js",
+    "main.css": "/driverZone/static/css/main.d2bb45fd.css",
+    "main.js": "/driverZone/static/js/main.2319721c.js",
     "static/media/service-video-bg.mp4": "/driverZone/static/media/service-video-bg.f05e88e45f9f479f185e.mp4",
     "static/media/service-video-bg.ogg": "/driverZone/static/media/service-video-bg.c43909dfd4f9d0ef2ce9.ogg",
     "static/media/tesla_model_s_black-wallpaper-1600x900.jpg": "/driverZone/static/media/tesla_model_s_black-wallpaper-1600x900.815ef36de7466b598416.jpg",
@@ -12,7 +12,7 @@
     "index.html": "/driverZone/index.html"
   },
   "entrypoints": [
-    "static/css/main.510d56be.css",
-    "static/js/main.33bdee81.js"
+    "static/css/main.d2bb45fd.css",
+    "static/js/main.2319721c.js"
   ]
 }
