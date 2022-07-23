@@ -15,8 +15,6 @@ const GoogleMapComponent = withGoogleMap(({ direction }) => {
     places.fromLocation = _.isEmpty(direction.fromLocation) ? { lat: 45.7640, lng: 4.8357 } : direction.fromLocation;
     places.toLocation = _.isEmpty(direction.toLocation) ? { lat: 48.7640, lng: 2.3557 } : direction.toLocation;
 
-    console.log(direction);
-
     const MapDirectionsRenderer = (props) => {
         const [directions, setDirection] = useState({});
 
@@ -26,20 +24,18 @@ const GoogleMapComponent = withGoogleMap(({ direction }) => {
             directionsService.route({
                 origin: places.fromLocation,
                 destination:  places.toLocation,
-
                 travelMode: google.maps.TravelMode.DRIVING
             }, (result, status) => {
                 console.log('result', result);
-                console.log('status', status);
                 if (status === google.maps.DirectionsStatus.OK) {
                     setDirection(result);
                 } else {
-                    setDirection({ error: result });
+                    setDirection(null);
                 }
             }
             );
         }, []);
-        console.log({ directions });
+
         if (directions) {
             return <DirectionsRenderer directions={directions} />;
         } else {
