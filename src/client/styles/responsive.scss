@@ -49,23 +49,29 @@
             width: 90vw;
             flex-direction: column;
             transform: translateY(-10%);
+
             .imageSide {
                 width: 100%;
-                &::before{
+
+                &::before {
                     background-color: var(--theme-primary);
                 }
             }
+
             .formSide {
                 padding: 2rem 1rem;
+
                 ul {
                     justify-content: center;
                 }
-                .formBoxContainer{
+
+                .formBoxContainer {
                     .rowForm {
                         flex-direction: column;
-                        .formBox{
+
+                        .formBox {
                             padding: 10px;
-                            border:1px solid rgba(0,0,0,.1);
+                            border: 1px solid rgba(0, 0, 0, .1);
                         }
                     }
                 }
@@ -73,32 +79,129 @@
         }
     }
 
-    .mapLayerModal{
-        .mapTransitionLayer{
+    .mapLayerModal {
+        .mapTransitionLayer {
             padding: 1rem;
-            .mapContainer{
+
+            .mapContainer {
                 height: 50%;
             }
-            .closeIcon{
+
+            .closeIcon {
                 right: -5px;
-                top:-35px;
+                top: -35px;
             }
-            .detailsContainer{
+
+            .detailsContainer {
                 position: relative;
-                top:unset;
+                top: unset;
                 width: 100%;
                 left: unset;
             }
         }
     }
 
-    .servicesContainer{
-        .rowService{
+    .servicesContainer {
+        .rowService {
             flex-direction: column;
             align-items: center;
-            .serviceBox{
+
+            .serviceBox {
                 width: 320px;
             }
         }
+    }
+
+    .tariffContainer {
+        .tariffInner {
+            .toggleContainer {
+                ul {
+                    li {
+                        width: 150px;
+                        height: 60px;
+                        border-radius: 20px;
+
+                        span {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+
+                .tariffSection {
+                    .rowTariff {
+                        flex-direction: column;
+                        box-shadow: var(--shadow-one);
+
+                        .tariffBox {
+                            padding: 1rem !important;
+
+                            ol {
+                                border: 1px solid rgba(0, 0, 0, .1);
+
+                                li {
+                                    padding: 2rem 1rem !important;
+                                }
+                            }
+                        }
+
+                        &.single {
+                            width: 100%;
+                        }
+                    }
+                }
+
+            }
+
+            .dispositn {
+                p {
+                    width: 90%;
+                }
+
+                table {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .bookUsContainer {
+        background-image: url('../assets/images/tesla_model_s_black-wallpaper-1600x900.jpg');
+        min-height: 70vh;
+
+        video {
+            display: none;
+        }
+
+        .bookUsContent {
+            flex-direction: column;
+            .leftSideImage {
+                width: 100%;
+                .actionImage {
+                    width: 190px;
+                }
+                .overlay_bg {
+                    width: 70%;
+                    left: 20%;
+                    top: 8%;
+                    height: 83%;
+
+                }
+            }
+            .callUsContent{
+                width: 100%;
+                padding: .5rem 2rem; 
+                gap: .51rem;
+                h2{
+                    font-size: 1.4rem;
+                }
+                h1{
+                    font-size: 2rem;
+                }
+                p{
+                    font-size: 1rem;
+                }
+            }
+        }
+
     }
 }
