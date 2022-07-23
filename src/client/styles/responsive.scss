@@ -166,7 +166,7 @@
 
     .bookUsContainer {
         background-image: url('../assets/images/tesla_model_s_black-wallpaper-1600x900.jpg');
-        min-height: 70vh;
+        min-height: 80vh;
 
         video {
             display: none;
@@ -198,14 +198,19 @@
 
                 h2 {
                     font-size: 1.4rem;
+                    margin: 0;
                 }
 
                 h1 {
                     font-size: 2rem;
+                    margin: 0;
+
                 }
 
                 p {
                     font-size: 1rem;
+                    margin: 0;
+
                 }
             }
         }
@@ -233,6 +238,7 @@
     .contactPageWrapper {
         .contactContainer {
             flex-direction: column;
+
             .gMapContainer {
                 .locationContent {
                     width: 80%;
