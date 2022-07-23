@@ -1,4 +1,5 @@
 @media (max-width: 500px) {
+    
     .container {
         width: 96vw;
     }
@@ -52,10 +53,7 @@
 
             .imageSide {
                 width: 100%;
-
-                &::before {
-                    background-color: var(--theme-primary);
-                }
+                display: none;
             }
 
             .formSide {
@@ -218,16 +216,25 @@
     }
 
     .faqMainContainer {
-        padding: 1rem;
+        padding: .5rem;
 
         .faqWrapper {
+            width: 100%;
             .faqElement {
-                width: 90%;
-
+                width: 100%;
+                .faqHead{
+                    h3{
+                        width: 92%;
+                        font-size: 1rem;
+                    }
+                }
                 .faqBody {
+                    padding: 0 !important;
                     &.active {
                         max-height: 150px;
-                        height: 65px;
+                        height: 100px;
+                        overflow-y: auto;
+                        
                     }
 
                 }
