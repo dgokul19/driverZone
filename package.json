@@ -1,6 +1,5 @@
 {
   "name": "driverzone",
-  "homepage": "https://dgokul19.github.io/driverZone",
   "version": "1.0.0",
   "scripts": {
     "server": "nodemon src/server/server.js",
