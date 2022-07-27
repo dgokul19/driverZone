@@ -20,7 +20,7 @@ function App() {
             <Routes>
                 <Route path="/faq" element={<FaqComponent/>} ></Route>
                 <Route path="/contact" element={<ContactComponent/>} ></Route>
-                <Route path="/*" element={<BookingContextProvider><HomeComponent/></BookingContextProvider>} />
+                <Route path="/" element={<BookingContextProvider><HomeComponent/></BookingContextProvider>} />
             </Routes>
         </Router>
     </div>
