@@ -40,9 +40,6 @@ const BookYourJourneyForm = () => {
         }
     };
 
-    const handleLocation = (e) => {
-    };
-
     return (
         <Fragment>
             <div className="bookingContainer">

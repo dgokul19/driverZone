@@ -29,6 +29,7 @@ export const MAP_CONSTANT = {
     defaultLongitude : 2.3522
 };
 
+export const GOOGLE_API_KEY = 'AIzaSyBfcE7VYDsfvc8oowKfwtp0BI3WTeuMpy4'
 
 export const FAQ_CONTENT = [
     {

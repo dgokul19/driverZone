@@ -1,4 +1,4 @@
-import { Fragment, useContext } from 'react';
+import { Fragment, useContext, useState } from 'react';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { RiMailSendLine } from 'react-icons/ri';
 import _ from 'underscore';
@@ -10,20 +10,10 @@ import './map.scss';
 
 const BookingMap = ({ open, closeModal, details = {} }) => {
     const { username, phone, fromLocation, toLocation, pickUpDate, pickUpTime } = details;
+    const [distance, setDistance] = useState('0.00');
     const { bookingLocation } = useContext(BookingContext);
-    let distance = 0.00;
 
     //calculates distance between two points in km's
-    const calcDistance = (p1, p2) => {
-        return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2) / 1000).toFixed(2);
-    };
-
-    if (!_.isEmpty(bookingLocation.fromLocation) && !_.isEmpty(bookingLocation.toLocation)) {
-        const location1 = new google.maps.LatLng(bookingLocation.fromLocation.lat, bookingLocation.fromLocation.lng);
-        const location2 = new google.maps.LatLng(bookingLocation.toLocation.lat, bookingLocation.toLocation.lng);
-
-        distance = calcDistance(location1, location2);
-    }
 
     return (
         <Fragment>
@@ -34,6 +24,7 @@ const BookingMap = ({ open, closeModal, details = {} }) => {
                     {
                         (!_.isEmpty(bookingLocation.fromLocation) && !_.isEmpty(bookingLocation.toLocation)) && <GoogleMap
                             direction={bookingLocation}
+                            pathDistance={setDistance}
                             containerElement={<div className='mapContainer' />}
                             mapElement={<div style={{ height: `100%` }} />}
                         />
@@ -68,7 +59,7 @@ const BookingMap = ({ open, closeModal, details = {} }) => {
                                 </tr>
                                 <tr>
                                     <td>Calculated distance</td>
-                                    <td>{distance} km</td>
+                                    <td>{distance}</td>
                                 </tr>
                             </tbody>
                         </table>
